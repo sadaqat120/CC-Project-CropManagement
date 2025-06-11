@@ -23,7 +23,7 @@ const CropManagement = ({ onBackToLanding }) => {
   useEffect(() => {
     const fetchStores = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/CropFarm", {
+        const response = await axios.get("https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/CropFarm", {
         });
         setStores(response.data);
       } catch (error) {
@@ -45,7 +45,7 @@ const CropManagement = ({ onBackToLanding }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/CropFarm",
+        "https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/CropFarm",
         { name: storeName },
         { }
       );
@@ -67,7 +67,7 @@ const CropManagement = ({ onBackToLanding }) => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/CropFarm/${storeBeingEdited._id}`,
+        `https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/CropFarm/${storeBeingEdited._id}`,
         { name: editStoreName },
         { }
       );
@@ -90,7 +90,7 @@ const CropManagement = ({ onBackToLanding }) => {
 
   const handleDeleteStore = async (storeId) => {
     try {
-      await axios.delete(`http://localhost:5000/CropFarm/${storeId}`, {
+      await axios.delete(`https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/CropFarm/${storeId}`, {
       });
       setStores(stores.filter((store) => store._id !== storeId));
       setDeleteConfirmation(false);

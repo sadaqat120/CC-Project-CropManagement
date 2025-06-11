@@ -21,7 +21,7 @@ const CropRecord = ({ cropFarmId }) => {
     const fetchRecord = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/crop-records/${cropFarmId}`,
+          `https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/crop-records/${cropFarmId}`,
           {}
         );
 
@@ -86,14 +86,14 @@ const CropRecord = ({ cropFarmId }) => {
 
       if (isEditMode && recordId) {
         await axios.put(
-          `http://localhost:5000/crop-records/${recordId}`,
+          `https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/crop-records/${recordId}`,
           formData,
           {}
         );
         setSuccessMsg("Crop Record Updated Successfully!");
       } else {
         await axios.post(
-          "http://localhost:5000/crop-records",
+          "https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/crop-records",
           { ...formData, cropFarmId },
           { }
         );

@@ -59,7 +59,7 @@ const CostTracking = ({ cropFarmId }) => {
     if (!validate()) return;
 
     try {
-      await axios.post("http://localhost:5000/cost-tracking", {
+      await axios.post("https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/cost-tracking", {
         cropFarmId,
         activity: selectedActivity,
         equipmentCost: Number(formData.equipmentCost || 0),

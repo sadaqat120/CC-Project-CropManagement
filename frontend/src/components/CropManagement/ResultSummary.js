@@ -25,7 +25,7 @@ const ResultSummary = ({ cropFarmId }) => {
       try {
         // Check harvest status
         const harvestRes = await axios.get(
-          `http://localhost:5000/result-summary/check-harvest/${cropFarmId}`,
+          `https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/result-summary/check-harvest/${cropFarmId}`,
           { }
         );
 
@@ -36,7 +36,7 @@ const ResultSummary = ({ cropFarmId }) => {
 
         // Fetch result summary (if exists)
         const summaryRes = await axios.get(
-          `http://localhost:5000/result-summary/${cropFarmId}`,
+          `https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/result-summary/${cropFarmId}`,
           {  }
         );
 
@@ -102,14 +102,14 @@ const ResultSummary = ({ cropFarmId }) => {
 
       if (isEditMode && recordId) {
         await axios.put(
-          `http://localhost:5000/result-summary/${recordId}`,
+          `https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/result-summary/${recordId}`,
           payload,
           {
           }
         );
         setSuccessMsg("Result Summary Updated Successfully!");
       } else {
-        await axios.post("http://localhost:5000/result-summary", payload, {
+        await axios.post("https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/result-summary", payload, {
         });
         setSuccessMsg("Result Summary Saved Successfully!");
       }

@@ -14,7 +14,7 @@ const Dashboard = ({ storeId }) => {
     const fetchAll = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/dashboard/${storeId}`,
+          `https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/dashboard/${storeId}`,
           {}
         );
 

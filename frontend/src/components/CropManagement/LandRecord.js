@@ -20,7 +20,7 @@ const LandRecord = ({ cropFarmId }) => {
     const fetchLandRecord = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/land-records/${cropFarmId}`,
+          `https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/land-records/${cropFarmId}`,
           {}
         );
         if (res.data && res.data.length > 0) {
@@ -69,7 +69,7 @@ const LandRecord = ({ cropFarmId }) => {
 
       if (isEditMode && recordId) {
         await axios.put(
-          `http://localhost:5000/land-records/${recordId}`,
+          `https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/land-records/${recordId}`,
           { ...formData },
           {
           }
@@ -77,7 +77,7 @@ const LandRecord = ({ cropFarmId }) => {
         setSuccessMsg("Land Record Updated Successfully!");
       } else {
         await axios.post(
-          "http://localhost:5000/land-records",
+          "https://cc-crop-backend-gvcthhdydfhjhgb2.eastasia-01.azurewebsites.net/land-records",
           { ...formData, cropFarmId },
           {
           }
